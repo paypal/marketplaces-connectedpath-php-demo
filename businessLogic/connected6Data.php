@@ -142,7 +142,6 @@ $isuRequestData =
                         "feature_list":[
                             "PAYMENT",
                             "REFUND",
-                            "SWEEP_FUNDS_EXTERNAL_SINK",
                             "PARTNER_FEE",
                             "DELAY_FUNDS_DISBURSEMENT"
                         ]
