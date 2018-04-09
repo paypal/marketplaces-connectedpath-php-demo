@@ -1,8 +1,10 @@
 # PayPal for Marketplaces Connected Path PHP Demo
 
+> **Important:** PayPal for Marketplaces is available to select partners for approved use cases. For more information, reach out to your PayPal account manager or [contact us](https://www.paypal.com/us/webapps/mpp/partner-program/contact-us?ref=marketplace).
+
 ## Prerequisites
 
-1. Update `PayConfig.php` with your "Partner credentials", "Seller emails", and "Seller Payer IDs". Reach out to your PayPal account manager or [contact us](https://www.paypal.com/us/webapps/mpp/partner-program/contact-us).
+1. Update `PayConfig.php` with your "Partner credentials", "Seller emails", and "Seller Payer IDs". If you do not have the credentials, please reach out to your PayPal account manager or click [contact us](https://www.paypal.com/us/webapps/mpp/partner-program/contact-us?ref=marketplace).
 2. Verify that all the files are in place by running and passing the Unit tests (process shown below).
 
 	```
