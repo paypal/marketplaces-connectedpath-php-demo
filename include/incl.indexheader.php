@@ -136,7 +136,7 @@ $mode = (isset($_REQUEST["mode"]) &&  $_REQUEST["mode"] == "isu") ? "isu" : "ma"
 <div class="container-fluid">
 
     <div class="well bg-color">
-        <h2 class="text-center">PayPal for Marketplaces &bull; <a href="#readme" class="light-links">Readme</a></h2>
+        <h2 class="text-center">PayPal for Partners &bull; <a href="#readme" class="light-links">Readme</a></h2>
     </div>
 
 </div>
