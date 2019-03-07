@@ -236,8 +236,99 @@ $sdkConfig = array(
     </div>
 </div>
 
+<!-- PayPal JSV4 script -->
 <script src="<?= $rootPath ?>js/script.js"></script>
-<!-- PayPal Javascript SDK script -->
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    paypal.Button.render({
+
+        // Set your environment
+        env: '<?= PAYPAL_ENVIRONMENT ?>',
+
+        // Set style of buttons
+        style: {
+            layout: 'horizontal',   // horizontal | vertical
+            size:   'medium',   // medium | large | responsive
+            shape:  'pill',         // pill | rect
+            color:  'gold',         // gold | blue | silver | black,
+            fundingicons: false,    // true | false,
+            tagline: false,          // true | false,
+        },
+
+        // Set allowed funding sources
+        funding: {
+            allowed: [
+                paypal.FUNDING.CARD,
+                paypal.FUNDING.CREDIT
+            ],
+            disallowed: [ ]
+        },
+
+        // Show the buyer a 'Pay Now' button in the checkout flow
+        commit: true,
+
+        // payment() is called to start the payment flow when a button is clicked
+        payment: function() {
+            const shippingMethodSelect = document.getElementById("shippingMethod"),
+                updatedShipping = shippingMethodSelect.options[shippingMethodSelect.selectedIndex].value,
+                update = {
+                    'updated_shipping': updatedShipping,
+                    'shipping_address': {
+                        "address_line_1": document.getElementById("line1").value,
+                        "address_line_2": document.getElementById("line2").value,
+                        "admin_area_1": document.getElementById("state").value,
+                        "admin_area_2": document.getElementById("city").value,
+                        "postal_code": document.getElementById("zip").value,
+                        "country_code": document.getElementById("country").value
+                    }
+                };
+            const postData = {
+                'original': JSON.parse('<?= json_encode($orderDetails) ?>'),
+                'update': update,
+                'flow': 'mark'
+            };
+            return request.post(
+                '<?= $rootPath.URL['services']['orders']['create'] ?>',
+                postData
+            ).then(function(returnObject) {
+                return returnObject.data.id;
+            });
+        },
+
+        // onAuthorize() is called when the buyer approves the payment
+        onAuthorize: function(data) {
+            const postData = {
+                key: "order_id",
+                value: data.orderID
+            };
+            submitForm('<?= $baseUrl.URL['redirect']['orders']['return_url'] ?>?flow=mark', postData);
+        },
+
+        // onCancel() is called when the buyer cancels payment authorization
+        onCancel: function(data) {
+            let url = "<?= $baseUrl ?>pages/orders/error.php?type=error",
+                postData = {
+                    key: "error",
+                    value: data
+                };
+            submitForm(url, postData);
+        },
+
+        // onError() is called when there is an error in this Checkout.js script
+        onError: function (error) {
+            let url = "<?= $baseUrl ?>pages/orders/error.php?type=error",
+                postData = {
+                    key: "error",
+                    value: error
+                };
+            submitForm(url, postData);
+        }
+
+    }, '#paypalCheckoutContainer');
+</script>
+
+<!-- PayPal Javascript SDK script
+<script src="<?= $rootPath ?>js/script.js"></script>
 <script type="text/javascript">
     const config = {
         buttons: {
@@ -299,6 +390,7 @@ $sdkConfig = array(
     document.head.appendChild(script);
 
 </script>
+-->
 <?php
 include($rootPath . 'templates/footer.php');
 ?>
