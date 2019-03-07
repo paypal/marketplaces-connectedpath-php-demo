@@ -149,7 +149,7 @@ $sdkConfig = array(
 <!-- PayPal JSV4 script -->
 <script src="<?= $rootPath ?>js/script.js"></script>
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-<script>
+<script type="text/javascript">
     paypal.Button.render({
 
         // Set your environment
