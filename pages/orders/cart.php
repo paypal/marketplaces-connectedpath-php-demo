@@ -223,56 +223,6 @@ $sdkConfig = array(
 
     }, '#paypalCheckoutContainer');
 </script>
-
-<!-- PayPal Javascript SDK script
-<script src="<?= $rootPath ?>js/script.js"></script>
-<script type="text/javascript">
-    const config = {
-        buttons: {
-            // Set up the transaction
-            createOrder: function() {
-                const postData = {
-                    'original': JSON.parse('<?= json_encode($orderDetails) ?>'),
-                    'update': null,
-                    'flow': 'shortcut'
-                };
-                return request.post(
-                    '<?= $rootPath.URL['services']['orders']['create'] ?>',
-                    postData
-                ).then(function(returnObject) {
-                    return returnObject.data.id;
-                });
-            },
-
-            // Finalize the transaction
-            onApprove: function(data) {
-                const postData = {
-                    key: "order_id",
-                    value: data.orderID
-                };
-                submitForm('<?= $baseUrl.URL['redirect']['orders']['return_url'] ?>?flow=shortcut', postData);
-            },
-
-            // onError() is called when there is an error in this Checkout.js script
-            onError: function (error) {
-                let url = "<?= $baseUrl ?>pages/orders/error.php?type=error",
-                    postData = {
-                        key: "error",
-                        value: error
-                    };
-                submitForm(url, postData);
-            }
-        }
-    };
-
-    let script = document.createElement('script');
-    script.onload = function () {
-        paypal.Buttons(config.buttons).render('#paypalCheckoutContainer');
-    };
-    script.src = 'https://www.paypal.com/sdk/js?<?= http_build_query($sdkConfig) ?>';
-    document.head.appendChild(script);
-</script>
--->
 <?php
 include($rootPath . 'templates/footer.php');
 ?>
