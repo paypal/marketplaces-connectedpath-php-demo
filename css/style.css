@@ -1,0 +1,109 @@
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.table > thead {
+    background-color: #f9f9f9;
+}
+
+.table > tbody > tr > td[colspan="2"] {
+    border: none;
+}
+
+.img-item {
+    max-width: 100px;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.card {
+    min-height: 200px;
+    margin-top: 10px;
+    border: #cccccc medium solid;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.flow-img {
+    max-width: 60%;
+    max-height: 60px;
+}
+
+.btn {
+    margin: 5px;
+}
+
+.bg-color {
+    color: white;
+    background: -moz-linear-gradient(0deg, #004094 0%, #0096D9 50%, #004094 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #004094),
+    color-stop(50%, #0096D9), color-stop(100%, #004094));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(0deg, #004094 0%, #0096D9 50%, #004094 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(0deg, #004094 0%, #0096D9 50%, #004094 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(0deg, #004094 0%, #0096D9 50%, #004094 100%);
+    /* ie10+ */
+    background: linear-gradient(90deg, #004094 0%, #0096D9 50%, #004094 100%);
+    /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004094',
+    endColorstr='#004094', GradientType=1); /* ie6-9 */
+}
+
+.header a ,
+.header a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.header a.light-links {
+    text-decoration: underline;
+}
+
+.panel {
+    box-shadow: none;
+}
+
+.cart-toggle {
+    font-style: italic;
+}
+
+.cart-toggle:after {
+    content: "Hide Details";
+}
+
+.cart-toggle.collapsed:after {
+    content: "Show Details";
+}
+
+.cart-table > tbody+tbody {
+    border-color: transparent;
+}
+
+.checkbox {
+    padding: 0 10px;
+}
+
+.readme li {
+    padding-top: 5px;
+}
+
+.readme mark {
+    font-style: italic;
+    padding: 5px;
+}

@@ -1,70 +1,62 @@
 <?php
-if (session_id() == "")
-	session_start();
-	require_once("include/incl.indexheader.php");
+/*
+    * Marketplace Homepage
+*/
+
+$rootPath = "";
+include($rootPath . 'templates/header.php');
+
 ?>
 
-		<div class="container-fluid">
-			<div class="row">
-		
-				<!-- --------- UPPER LEFT --------- -->
-				<div class="col-sm-6">
-				
-					<div class="divBorder" style="min-height: 470px;">
+<div class="container-fluid">
+    <div class="row">
+        <!-- Main Section -->
+        <div class="col-md-6 col-xs-12">
+            <div class="card">
+                <h3>Connected Path</h3>
+                <hr>
+                <br>
+                <a class="btn btn-primary"
+                   href="<?= $rootPath ?>pages/onBoarding/create.php">
+                    OnBoarding
+                </a>
+                <a class="btn btn-primary"
+                   href="<?= $rootPath ?>pages/orders/cart.php">
+                    Orders
+                </a>
+                <a class="btn btn-primary"
+                   href="<?= $rootPath ?>pages/disburse/disburse.php">
+                    Disburse
+                </a>
+                <a class="btn btn-primary"
+                   href="<?= $rootPath ?>pages/refunds/refund.php">
+                    Refund
+                </a>
+            </div>
+        </div>
 
-						<h3> Connected Path </h3>
-						</br>
-						</br>
-						<h4> Pattern: <small>Funds Movement: Yes;  Partner Fee: Yes;  Cart Type: Multi Merchant Cart</small></h4>
-						<p style="font-size:18px">
-							<a href="onboarding/isu_1.php?mode=isu">Onboarding</a> -
-							<a href="checkout/checkout_1.php?mode=isu">Checkout</a> -
-							<a href="disburse/disburse_1.php?mode=isu">Disburse</a> -
-							<a href="refund/refund_1.php?mode=isu">Refund</a>
-						</p>
-						
-						</br>
-						</br>
+        <!-- Managed Path section -->
+        <div class="col-md-6 col-xs-12">
+            <div class="card">
+                <h3>Managed Path</h3>
+                <hr>
+                <br>
+                <p class="lead">
+                    Available separately on <a href="https://demo.paypal.com/us/demo/code_samples" target="_blank">PayPal Demo</a>
+                </p>
+            </div>
+        </div>
 
-					</div>
-					
-					
-				</div>
-				
-				<!-- --------- UPPER RIGHT --------- -->
-				<div class="col-sm-6">
+        <!-- Readme section -->
+        <div class="col-xs-12">
+            <div id="readme" class="card">
+                <?php include($rootPath . "templates/readme.php"); ?>
+            </div>
+        </div>
 
-				
-					<div class="divBorder" style="min-height: 470px;">
+    </div>
+</div>
 
-						 <h3> Managed Path </h3>
-						</br>
-						</br>
-						<p style="font-size:18px" >
-							<!-- Managed Accounts - Checkout - Disburse - Refund -->
-							Available separately on <a href="https://demo.paypal.com/us/demo/code_samples" target="_blank">PayPal Demo</a>.
-						</p>
-						</br>
-						</br>
-						
-
-					</div>
-					
-					
-				</div>				
-
-	
-				<!-- ---------  Readme --------- -->
-				
-				<div class="col-xs-12">
-					<a id="readme"></a>
-					<div class="divBorder">
-					 	<?php include("include/incl.readme.php"); ?>
-					</div>
-				</div>  
-
-			</div> <!-- row -->
-
-		</div> <!-- container -->
-
-<?php require_once("include/incl.footer.php"); ?>
+<?php
+include($rootPath . 'templates/footer.php');
+?>
