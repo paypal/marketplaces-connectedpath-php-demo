@@ -2,7 +2,7 @@
     <h3>Readme</h3>
 
     <br />
-    <b>Important:</b> PayPal for Marketplaces is a limited-release solution at this time. It is available to select partners for approved use cases. For more information, reach out to your PayPal account manager or <a href="https://www.paypal.com/us/webapps/mpp/partner-program/contact-us" target="_blank">contact us</a>.
+    <b>Important:</b> PayPal Commerce Platform for eCommerce Solution Providers and Marketplaces is a limited-release solution at this time. It is available to select partners for approved use cases. For more information, reach out to your PayPal account manager or <a href="https://www.paypal.com/us/webapps/mpp/partner-program/contact-us" target="_blank">contact us</a>.
     <br/><br/>
 
     <h4>Getting Started</h4>

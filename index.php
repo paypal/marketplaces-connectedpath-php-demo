@@ -1,6 +1,6 @@
 <?php
 /*
-    * Marketplace Homepage
+    * PayPal Commerce Platform Homepage
 */
 
 $rootPath = "";

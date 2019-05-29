@@ -47,7 +47,7 @@ abstract class DataFactory {
                         'name' => 'Legal Business Name'
                     )
                 ),
-                'business_description' => 'Sample pre-fill merchant for PayPal Marketplace Demo',
+                'business_description' => 'Sample pre-fill merchant for the Demo',
                 'event_dates' => array (
                     array (
                         'event_type' => 'ESTABLISHED',
