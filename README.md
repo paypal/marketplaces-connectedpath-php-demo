@@ -1,6 +1,6 @@
 # PayPal Commerce Platform Connected Path PHP Demo
 
-> **Important:** PayPal Commerce Platform is a limited-release solution at this time. It is available to select partners for approved use cases. For more information, reach out to your PayPal account manager.
+> **Important:** PayPal Commerce Platform for eCommerce Solution Providers and Marketplaces is a limited-release solution at this time. It is available to select partners for approved use cases. For more information, reach out to your PayPal account manager.
 
 ## Prerequisites
 
