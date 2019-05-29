@@ -1,4 +1,4 @@
-###The PayPal Commerce Platform Connected PHP code sample is released under the following license:
+###The PayPal Commerce Platform - Connected PHP code sample is released under the following license:
 
     Copyright (c) 2013-2016 PAYPAL, INC.
 
